@@ -1,27 +1,25 @@
 import React from "react";
-import { Card, CardContent, Typography, Box } from "@mui/material";
 
 export const Service = ({ title, description }) => {
   return (
-    <Box sx={{ padding: 2 }}>
-      <Card 
-        sx={{ 
-          maxWidth: 345, 
-          boxShadow: 3, 
-          borderRadius: 2,
-          "&:hover": { boxShadow: 6 } // Hover effect
-        }}
-      >
-        <CardContent>
-          <Typography variant="h5" component="div" gutterBottom>
-            {title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {description}
-          </Typography>
-        </CardContent>
-      </Card>
-    </Box>
+    <div
+      className="service-container"
+      style={{
+        padding: "16px",
+        maxWidth: "345px",
+        border: "1px solid #ccc",
+        borderRadius: "8px",
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+        transition: "box-shadow 0.3s",
+      }}
+      onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)")}
+      onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 2px 4px rgba(0, 0, 0, 0.1)")}
+    >
+      <div className="service-content">
+        <h3 style={{ margin: "0 0 8px 0", fontSize: "1.25rem" }}>{title}</h3>
+        <p style={{ margin: "0", color: "#666", fontSize: "0.9rem" }}>{description}</p>
+      </div>
+    </div>
   );
 };
 
